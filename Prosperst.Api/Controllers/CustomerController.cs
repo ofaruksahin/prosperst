@@ -1,0 +1,21 @@
+﻿namespace Prosperst.Api.Controllers
+{
+    public class CustomerController : BaseController
+    {
+        public CustomerController(IMediator mediator) : base(mediator)
+        {
+        }
+
+        [HttpPost]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(BaseResponse<CreateUserCommandResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> Create(CreateUserCommand command)
+        {
+            var response = await _mediator.Send(command);
+            return Response(response);
+        }
+    }
+}

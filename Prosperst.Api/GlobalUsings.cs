@@ -1,0 +1,11 @@
+﻿global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using Prosperst.Application.Features.Customers.Request;
+global using Prosperst.Application.Features.Customers.Response;
+global using Prosperst.Application.Response;
+global using Prosperst.Persistence;
+global using FluentValidation.AspNetCore;
+global using Microsoft.EntityFrameworkCore;
+global using Prosperst.Application.Contracts;
+global using Prosperst.Application.Implementations;
+global using Prosperst.Persistence.Repositories;

@@ -1,7 +1,8 @@
 ﻿namespace Prosperst.Domain.Entities
 {
-    public abstract class BaseEntity<TId>
+    public abstract class BaseEntity
     {
-        public TId Id { get; set; }
+        public int Id { get; set; }
+        public List<INotification> DomainEvents { get; set; }
     }
 }
