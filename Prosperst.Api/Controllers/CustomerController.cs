@@ -20,10 +20,10 @@
 
         [HttpPost("verify")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(BaseResponse<NoContent>),StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseResponse<NoContent>),StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseResponse<NoContent>),StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(BaseResponse<NoContent>),StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseResponse<NoContent>), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Verify(VerifyCustomerCommand command)
         {
             var response = await _mediator.Send(command);

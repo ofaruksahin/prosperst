@@ -9,7 +9,6 @@
         {
             _customerRepository = customerRepository;
             _mediator = mediator;
-
         }
 
         public async Task<BaseResponse> Handle(VerifyCustomerCommand request, CancellationToken cancellationToken)

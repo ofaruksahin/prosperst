@@ -1,7 +1,3 @@
-using Azure.Core;
-using System.Security.Cryptography;
-using System.Text;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();

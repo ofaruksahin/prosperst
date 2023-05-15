@@ -6,12 +6,11 @@
         private readonly ICustomerRepository _customerRepository;
 
         public CustomerCreatedDomainEventHandler(
-            IKPSService kpsService, 
+            IKPSService kpsService,
             ICustomerRepository customerRepository)
         {
             _kpsService = kpsService;
             _customerRepository = customerRepository;
-
         }
 
         public async Task Handle(CustomerCreatedDomainEvent notification, CancellationToken cancellationToken)
