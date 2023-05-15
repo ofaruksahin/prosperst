@@ -2,6 +2,6 @@
 {
     public interface IKPSService
     {
-        Task Verify(Customer customer);
+        Task<bool> Verify(Customer customer);
     }
 }

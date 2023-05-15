@@ -33,6 +33,7 @@
         public void ChangeStatus(CustomerStatus status)
         {
             Status = status;
+            IdentityNoVerified = Status == CustomerStatus.IDENTITY_VERIFICATED;
         }
     }
 }

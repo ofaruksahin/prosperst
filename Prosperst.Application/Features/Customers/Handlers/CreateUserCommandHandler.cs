@@ -1,15 +1,15 @@
 ﻿namespace Prosperst.Application.Features.Customers.Handlers
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, BaseResponse>
+    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, BaseResponse>
     {
         private ICustomerRepository _customerRepository;
 
-        public CreateUserCommandHandler(ICustomerRepository customerRepository)
+        public CreateCustomerCommandHandler(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
         }
 
-        public async Task<BaseResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<BaseResponse> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
             var hasExistsIdentityNumber = await _customerRepository.HasExistsIdentityNumber(request.IdentityNo);
             if (hasExistsIdentityNumber)
@@ -20,7 +20,7 @@
             await _customerRepository.AddAsync(customer);
             await _customerRepository.UnitOfWork.CommitAsync();
 
-            var commandResponse = new CreateUserCommandResponse(customer.Id);
+            var commandResponse = new CreateCustomerCommandResponse(customer.Id);
             return BaseResponse.Success(commandResponse);
         }
     }

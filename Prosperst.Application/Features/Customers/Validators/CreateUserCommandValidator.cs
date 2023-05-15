@@ -1,8 +1,8 @@
 ﻿namespace Prosperst.Application.Features.Customers.Validators
 {
-    public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
+    public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
     {
-        public CreateUserCommandValidator()
+        public CreateCustomerCommandValidator()
         {
             RuleFor(f => f.Name).NotEmpty().MaximumLength(50);
             RuleFor(f => f.Surname).NotEmpty().MaximumLength(50);

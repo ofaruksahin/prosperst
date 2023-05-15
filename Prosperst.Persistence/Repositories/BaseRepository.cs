@@ -17,5 +17,12 @@ namespace Prosperst.Persistence.Repositories
         {
             await _context.AddAsync(entity);
         }
+
+        public Task UpdateAsync(TEntity entity)
+        {
+            _context.Update(entity);
+
+            return Task.CompletedTask;
+        }
     }
 }

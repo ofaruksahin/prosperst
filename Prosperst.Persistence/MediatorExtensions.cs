@@ -12,6 +12,8 @@
                 .SelectMany(f => f.Entity.DomainEvents)
                 .ToList();
 
+            ctx.ChangeTracker.Clear();
+
             foreach (var domainEvent in domainEvents)
                 await mediator.Publish(domainEvent);
         }

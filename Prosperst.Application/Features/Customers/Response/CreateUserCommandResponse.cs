@@ -1,10 +1,10 @@
 ﻿namespace Prosperst.Application.Features.Customers.Response
 {
-    public class CreateUserCommandResponse
+    public class CreateCustomerCommandResponse
     {
         public int Id { get; private set; }
 
-        public CreateUserCommandResponse(int id)
+        public CreateCustomerCommandResponse(int id)
         {
             Id = id;
         }
